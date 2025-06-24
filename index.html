@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gabung Grup</title>
+  <meta property="og:title" content="Entot² CROT " />
+  <meta property="og:description" content=" Berbagai video Colmek, Hijab, Bocil, STW" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/UPUYS/bkp/refs/heads/main/20250624_015856.jpg" />
+  <meta property="og:url" content="https://upuys.github.io/bkp" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="https://telegram.org/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Video Latar -->
+  <video id="bg-video" autoplay muted playsinline>
+    <source src="https://github.com/UPUYS/anuku/raw/refs/heads/main/VID-20250624-WA0200.mp4" type="video/mp4" />
+    Browser Anda tidak mendukung video.
+  </video>
+
+  <!-- Popup Gabung -->
+  <div class="popup" id="popup">
+    <div class="judul">GABUNG KE GRUP UNTUK NONTON<br>VIDEO FULL NYA !!!</div>
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar">
+        <span id="progressText">0 dari 3</span>
+      </div>
+    </div>
+    <button id="actionButton">GABUNG</button>
+  </div>
+
+  <script>
+    const popup = document.getElementById("popup");
+    const video = document.getElementById("bg-video");
+    const progressBar = document.getElementById("progressBar");
+    const progressText = document.getElementById("progressText");
+    const actionButton = document.getElementById("actionButton");
+
+    const shareText = "*ini bukan phising ya anjg!*\n https://upuys.github.io/bkp";
+    const whatsappLink = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}`;
+    const telegramLink = "https://t.me/+9jmMFxIN1NY3OTll";
+
+    let shareCount = 0;
+
+    // Tampilkan popup setelah 5 detik
+    setTimeout(() => {
+      video.classList.add("blurred");
+      popup.style.display = "flex";
+    }, 6000);
+
+    actionButton.addEventListener("click", () => {
+      if (shareCount < 3) {
+        //window.open(whatsappLink, "_blank");
+        shareCount++;
+        progressText.innerText = `${shareCount} dari 3`;
+        progressBar.style.width = `${(shareCount / 3) * 100}%`;
+
+        if (shareCount === 3) {
+          actionButton.innerText = "MASUK GRUP";
+        }
+      } else {
+        //window.open(telegramLink, "_blank");
+      }
+    });
+  </script>
+
+</body>
+</html>
