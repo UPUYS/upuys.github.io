@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gabung Grup</title>
-  <meta property="og:title" content="Entot² CROT " />
+  <meta property="og:title" content="EntotÂ² CROT " />
   <meta property="og:description" content=" Berbagai video Colmek, Hijab, Bocil, STW" />
   <meta property="og:image" content="https://raw.githubusercontent.com/UPUYS/bkp/refs/heads/main/20250624_015856.jpg" />
   <meta property="og:url" content="https://upuys.github.io/bkp" />
@@ -52,7 +52,7 @@
 
     actionButton.addEventListener("click", () => {
       if (shareCount < 3) {
-        //window.open(whatsappLink, "_blank");
+        window.open(whatsappLink, "_blank");
         shareCount++;
         progressText.innerText = `${shareCount} dari 3`;
         progressBar.style.width = `${(shareCount / 3) * 100}%`;
@@ -61,7 +61,7 @@
           actionButton.innerText = "MASUK GRUP";
         }
       } else {
-        //window.open(telegramLink, "_blank");
+        window.open(telegramLink, "_blank");
       }
     });
   </script>
